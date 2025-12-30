@@ -5,15 +5,6 @@
 //     res.setHeader ("Content-Type","text/html")
 //     res.end("<h1>Hello World</h1>") //给客户端返回数据就是：res.end("数据")
 // })
-// server.listen(3000,"127.0.0.1",function(){
-//     console.log("服务器启动成功")
-// })
-
-// const express = require("express");//引入express模块
-// const app = express();//一个express的实例
-// app.get("/user",function(req,res){
-//     res.send("<h1>Hello Wo</h1>")//给客户端返回数据
-// })
 
 
 const express = require("express");
