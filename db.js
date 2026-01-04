@@ -5,16 +5,31 @@ const db = mysql.createConnection({
     port: "3306",
     user: "root",
     password: "123456",
-    database: "douban"
+    database: "movies"
+})
+const dbCms = mysql.createConnection({
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: "123456",
+    database: "cms"
 })
 
 // 测试连接
 db.connect((err) => {
     if (err) {
-        console.error("数据库连接失败:", err.message);
+        console.error("Movies数据库连接失败:", err.message);
         return;
     }
-    console.log("数据库连接成功");
+    console.log("Movies数据库连接成功");
 });
 
-module.exports = db
+dbCms.connect((err) => {
+    if (err) {
+        console.error("Cms数据库连接失败:", err.message);
+        return;
+    }
+    console.log("Cms数据库连接成功");
+});
+
+module.exports = { db, dbCms }
